@@ -1,0 +1,153 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f5fa;
+  color: #222;
+}
+
+header {
+  background: #243b80;
+  color: white;
+  text-align: center;
+  padding: 28px 16px;
+}
+
+header h1 {
+  margin: 0 0 10px;
+  font-size: 30px;
+}
+
+header p {
+  margin: 0;
+  font-size: 14px;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 22px 20px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+input,
+select {
+  min-width: 180px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  background: white;
+  font-size: 14px;
+}
+
+input {
+  flex: 2;
+}
+
+select {
+  flex: 1;
+  cursor: pointer;
+}
+
+#resultCount {
+  font-size: 14px;
+  color: #444;
+  margin: 16px 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  );
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 3px 12px #00000010;
+  transition: transform 0.2s;
+  min-width: 0;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-card img {
+  display: block;
+  width: 100%;
+  height: 170px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  line-height: 1.4;
+  min-height: 44px;
+  overflow-wrap: anywhere;
+}
+
+.price {
+  color: #087443;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.category {
+  color: #666;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.rating {
+  font-size: 13px;
+  color: #444;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 15px 12px;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  input,
+  select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
+  .product-card img {
+    height: 130px;
+  }
+
+  .product-card h3 {
+    font-size: 14px;
+  }
+}
